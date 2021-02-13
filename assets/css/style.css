@@ -1,19 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 :root{
     --mainColor: #ffc267;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 html,body{
     height: 100%;
-
 }
+
+
+/***Cabeçalho***/
 
 header{
     display: flex;
@@ -61,25 +63,21 @@ header .nav{
 
 nav li{
     display: inline;
-    padding: 15px 15px;
-    transition: all 200ms;
-    border-radius: 4px;
-}
-
-nav li:hover{
-    background-color: rgba(255, 255, 255, 0.164);
 }
 
 nav a{
     display: inline;
     position: relative;
-    z-index: 1;
-    padding: 25px;
-    margin: -25px;
+    padding: 15px 15px;
     color: var(--mainColor);
     text-decoration: none;
     font-size: 16px;
+    transition: all 200ms;
+    border-radius: 4px;
+}
 
+nav a:hover{
+    background-color: rgba(255, 255, 255, 0.164);
 }
 
 header .icon-menu{
@@ -152,26 +150,81 @@ input[type="search"]{
     background-image: url('../search.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 42%;
     padding: 15px 20px;
     border-radius: 4px;
+    transition: all 200ms;
 }
 
 .icon-buscar:hover{
     background-color: rgba(255, 255, 255, 0.164);
 }
 
+/***Fim cabeçalho***/
 
-@media screen and (max-width: 550px) {
-    header .logo{
-        width: 125px;
-        height: 100%;
+
+/***Corpo Principal***/
+
+
+
+main .container{
+    width: 100%;
+    max-width: 1250px;
+    background-color: #141514;
+    margin: 0 auto;
+}
+
+main .post-area{
+    
+}
+
+main .post{
+    width: calc(100% / 5 - 18px);
+    height: 300px;
+    display: inline-block;
+    background-color: rgb(143, 184, 103);
+    margin-left: 15px;
+    margin-right: -4px;
+    margin-bottom: 25px;
+}
+
+
+
+/***Fim Corpo Principal***/
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    /***Cabeçalho***/
+    header .container-header{
+        width: 100%;
+        margin: 0 10px;
     }
+    /***Fim cabeçalho***/
+
+
+    /***Corpo Principal***/
+
+    main .post{
+        width: calc(100% / 4 - 19px);
+        height: 280px;
+    }
+    /***Fim Corpo Principal***/
+}
+
+@media screen and (max-width: 820px) {
+
+    main .post{
+        width: calc(100% / 4 - 18px);
+    }
+
 }
 
 
 @media screen and (max-width: 855px) {
-
+    /***Cabeçalho***/
     header .nav{
         display: block;
         position: absolute;
@@ -188,6 +241,7 @@ input[type="search"]{
 
     nav li{
         display: block;
+        border-bottom: 1px solid rgba(255, 216, 143, 0.212);
     }
 
     header .icon-menu{
@@ -195,6 +249,7 @@ input[type="search"]{
     }
 
     header .icon-buscar{
+        background-size: 50%;
         position: absolute;
     }
 
@@ -205,14 +260,46 @@ input[type="search"]{
     form:hover{
         background-color: rgba(255, 255, 255, 0.164);
     }
+    /***Fim cabeçalho***/
 
 }
 
 
+@media screen and (max-width: 820px) {
 
-@media screen and (max-width: 1024px) {
-    header .container-header{
-        width: 100%;
-        margin: 0 10px;
+    /***Corpo Principal***/
+
+    main .post{
+        width: calc(100% / 2 - 22px);
+        height: 350px;
+    }
+
+    /***Fim Corpo Principal**/
+
+}
+
+@media screen and (max-width: 550px) {
+    /***Cabeçalho***/
+    header .logo{
+        width: 125px;
+        height: 100%;
+    }
+    /***Fim cabeçalho***/
+}
+
+@media screen and (max-width: 500px) {
+    /***Corpo Principal***/
+
+    main .post{
+        width: calc(100% - 59px);
+        height: 400px;
+        margin-left: 30px;
+    }
+    /***Fim Corpo Principal***/
+}
+
+@media screen and (max-width: 350px){
+    main .post{
+        height: 300px;
     }
 }
