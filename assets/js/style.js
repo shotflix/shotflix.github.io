@@ -20,7 +20,7 @@ form.addEventListener('mouseenter', () => {
 
 form.addEventListener('click', () => {
 
-    if (visualViewport.width < 855) {
+    if (window.innerWidth < 855) {
         (function aumentarTamanho(){
             buscar.style.height = '40px'
             buscar.style.width = '100%'
@@ -83,7 +83,7 @@ removeMenu.addEventListener('click', () => {
 
 iconBuscar.addEventListener('click', () => {
     inputBuscar.focus()
-    if (visualViewport.width < 855 && inputBuscar.focus) {
+    if (window.innerWidth < 855 && inputBuscar.focus) {
         inputBuscar.style.margin = '10px 5px'
     }
 })
