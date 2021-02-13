@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Shotflix</title>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="assets/css/style.css">
   </body>
   </head>
@@ -38,15 +38,11 @@
 
     <!--Corpo Principal-->
     <main>
-      <div class="container">
-        <section class="post-area">
-          {% for post in site.posts %}
-            <div class="post">
-              <a href="{{post.url}}">{{ post.title }}</a>
-            </div><!--Post-->
-          {% endfor %}
-        </section>
-      </div><!--Container-->
+        <div class="container">
+            <section class="post-area">
+             {{ content }}
+            </section>
+        </div><!--Container-->
     </main>
     <!--Fim Corpo Principal-->
 
