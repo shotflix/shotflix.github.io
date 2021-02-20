@@ -7,6 +7,8 @@ const nav = document.getElementById('nav')
 const inputBuscar = document.getElementById('buscar')
 const header = document.querySelector('header')
 const ulHeader = document.getElementById('ul-header')
+const post = document.querySelectorAll('#post')
+const categoriasArea = document.querySelectorAll('#categorias-area')
 
 var time;
 
@@ -86,4 +88,13 @@ iconBuscar.addEventListener('click', () => {
     if (window.innerWidth < 855 && inputBuscar.focus) {
         inputBuscar.style.margin = '10px 5px'
     }
-})
+});
+
+
+(function openLinkPost() {
+    for (var i = 0; i < post.length; i++){
+        post[i].addEventListener('click', () => {
+            document.getElementById('link-post').click()
+        })
+    }
+})();
