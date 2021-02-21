@@ -245,7 +245,7 @@ main .container{
     cursor: pointer;
     border-radius: 7px;
     margin-top: 20px;
-    background: linear-gradient(10deg, #ffa125,#e6683c ,#dc27a0,#7a23cc,#2209ff 90%);
+    background: linear-gradient(10deg, #ffa125,#e6683c ,#dc27a0,#7a23cc,#2209ff);
     background-size: 300% 300%;
     animation: banner 15s ease infinite;
     
