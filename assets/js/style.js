@@ -7,6 +7,8 @@ const nav = document.getElementById('nav')
 const inputBuscar = document.getElementById('buscar')
 const header = document.querySelector('header')
 const ulHeader = document.getElementById('ul-header')
+const post = document.querySelectorAll('#post')
+const categoriasArea = document.querySelectorAll('#categorias-area')
 
 var time;
 
@@ -20,7 +22,7 @@ form.addEventListener('mouseenter', () => {
 
 form.addEventListener('click', () => {
 
-    if (visualViewport.width < 855) {
+    if (window.innerWidth < 855) {
         (function aumentarTamanho(){
             buscar.style.height = '40px'
             buscar.style.width = '100%'
@@ -83,7 +85,16 @@ removeMenu.addEventListener('click', () => {
 
 iconBuscar.addEventListener('click', () => {
     inputBuscar.focus()
-    if (visualViewport.width < 855 && inputBuscar.focus) {
+    if (window.innerWidth < 855 && inputBuscar.focus) {
         inputBuscar.style.margin = '10px 5px'
     }
-})
+});
+
+
+(function openLinkPost() {
+    for (var i = 0; i < post.length; i++){
+        post[i].addEventListener('click', () => {
+            document.getElementById('link-post').click()
+        })
+    }
+})();
