@@ -1,0 +1,23 @@
+---
+title: Assista todos os filmes
+layout: default
+---
+
+
+
+<div class="espassamento">Todos os filmes adicionados &darr;</div>
+<section class="post-area">
+  {% for post in site.posts %}
+    <div id="post" class="post">
+      <div class="img-categoria" style="background-image: url({{post.image}});">
+        <div id="categorias-area" class="categorias-area">
+          {%for tag in post.tags%}
+            <div class="categoria">{{ tag }}</div>
+          {%endfor%}
+        </div>
+        <div class="icon-play"></div>
+      </div><!--img-categoria-->
+      <p class="post-title"><a id="link-post" href="{{post.url}}">{{post.title}}</a></p>
+    </div><!--Post-->
+  {% endfor %}
+</section>

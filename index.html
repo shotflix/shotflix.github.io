@@ -1,0 +1,102 @@
+---
+title: Assista filmes online - Shotflix
+layout: default
+---
+
+
+<section class="slider-area">
+    <div id="slide-container" class="slide-container">
+        <div class="slider"></div>
+        <div id="teste" class="slider"></div>
+        <div class="slider"></div>
+    </div>
+</section>
+<div class="insta-banner">
+    <a class="banner-insta" target="blank" href="https://www.instagram.com/shotflixtv/"></a>
+    <div class="img"></div>
+    <div class="insta">SHOTFLIXTV</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+    var slide = document.getElementById('slide-container')
+
+
+    //Animação Slide//
+    onload = () => {
+        tradeSlideAuto(slide);
+        $('body').animate({
+            opacity: 1
+        }, 500)
+        slide.scrollLeft = (slide.scrollWidth - slide.clientWidth) / 2;
+    }
+
+    function tradeSlide(skipOption, element, repetirValor, time) {
+        let tamanhoTotal = (element.scrollWidth - element.clientWidth)
+        let sizeTrade = tamanhoTotal / repetirValor
+
+        if (skipOption == 'anterior') {
+            if (element.scrollLeft > 0) {
+                animateSlide(element.scrollLeft - sizeTrade, time, element)
+            }
+        } else if (skipOption == 'proximo') {
+            if (element.scrollLeft < tamanhoTotal) {
+                animateSlide(element.scrollLeft + sizeTrade, time, element)
+            }
+        }
+    }
+
+    function tradeSlideAuto(element, ) {
+        let tamanhoTotal = (element.scrollWidth - element.clientWidth)
+        let sizeTrade = tamanhoTotal / 2
+        let timeSkip;
+
+        function setIntervalo() {
+            timeSkip = setInterval(() => {
+                if (element.scrollLeft == 0) {
+                    animateSlide(element.scrollLeft + sizeTrade, 500, element)
+                } else if (element.scrollLeft == tamanhoTotal) {
+                    animateSlide(0, 500, element)
+                } else {
+                    animateSlide(element.scrollLeft + sizeTrade, 500, element)
+                }
+            }, 3500)
+        }
+
+        window.addEventListener('focus', () => {
+            clearInterval(timeSkip)
+            setIntervalo()
+        })
+        window.addEventListener('blur', () => {
+            clearInterval(timeSkip)
+        })
+
+        setIntervalo()
+    }
+
+    function animateSlide(position,time, element) {
+        $(element).animate({
+            scrollLeft: position
+        }, time)
+        console.log({scroll: element.scrollLeft, width: element.clientWidth})
+    }
+
+    //Fim Animação Slide//
+
+
+    function animationBannerInsta() {
+        $('.insta-banner').animate({
+            background: linearGradient('45deg, #fcac00 0%,#e6683c 25%,#dc27a0 50%,#7a23cc 75%,#00000 100%')
+        }, 1000)
+    }
+
+
+</script>

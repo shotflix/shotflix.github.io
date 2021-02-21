@@ -1,19 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap');
+
 :root{
     --mainColor: #ffc267;
+    --textColor: #c0ccda;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 html,body{
     height: 100%;
-
+    background-color: #141514;
 }
+body{
+    opacity: 1;
+}
+
+.clear{
+    clear: both;
+}
+
+
+/***Cabeçalho***/
 
 header{
     display: flex;
@@ -23,6 +35,7 @@ header{
     height: 70px;
     background-color: #202020;
 }
+
 
 header .container-header{
     display: flex;
@@ -54,6 +67,7 @@ header .logo a{
 }
 
 header .nav{
+    z-index: 999;
     display: flex;
     align-items: center;
     transition: all 300ms;
@@ -61,32 +75,31 @@ header .nav{
 
 nav li{
     display: inline;
-    padding: 15px 15px;
-    transition: all 200ms;
-    border-radius: 4px;
-}
-
-nav li:hover{
-    background-color: rgba(255, 255, 255, 0.164);
 }
 
 nav a{
     display: inline;
     position: relative;
-    z-index: 1;
-    padding: 25px;
-    margin: -25px;
+    padding: 15px 15px;
     color: var(--mainColor);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 200ms;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
 
+nav a:hover{
+    background-color: rgba(255, 255, 255, 0.164);
+    font-size: 17px;
 }
 
 header .icon-menu{
     display: none;
     width: 25px;
     height: 25px;
-    background-image: url('../menu.png');
+    background-image: url('../images/menu.png');
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -103,7 +116,7 @@ header .removeMenu{
     display: none;
     width: 25px;
     height: 25px;
-    background-image: url('../cancel.png');
+    background-image: url('../images/cancel.png');
     background-position: center;
     background-size: 70%;
     background-repeat: no-repeat;
@@ -149,29 +162,291 @@ input[type="search"]{
 .icon-buscar{
     width: 50px;
     height: 48px;
-    background-image: url('../search.png');
+    background-image: url('../images/search.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 42%;
     padding: 15px 20px;
     border-radius: 4px;
+    transition: all 200ms;
+    cursor: pointer;
 }
 
 .icon-buscar:hover{
     background-color: rgba(255, 255, 255, 0.164);
 }
 
+/***Fim cabeçalho***/
 
-@media screen and (max-width: 550px) {
-    header .logo{
-        width: 125px;
-        height: 100%;
+
+/***Corpo Principal***/
+
+
+
+main .container{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+
+.slider-area{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+.slide-container{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.slider{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: -4px;
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    border-radius: 7px;
+    background-color: green;
+}
+
+.anterior-slide{
+    position: absolute;
+    top: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+.proximo-slide{
+    position: absolute;
+    right: 0;
+    top: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+.insta-banner{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-top: 20px;
+    background: linear-gradient(10deg, #ffa125,#e6683c ,#dc27a0,#7a23cc,#2209ff 90%);
+    background-size: 300% 300%;
+    animation: banner 15s ease infinite;
+    
+}
+@keyframes banner {
+    0%{background-position:79% 0%}
+    50%{background-position:22% 100%}
+    100%{background-position:79% 0%}
+}
+
+
+.insta-banner .img{
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn.glitch.com/d6d9be43-c2ec-410d-be4a-0e140eb7fd26%2Finstagram.png?v=1612073716184');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5px;
+}
+
+.insta{
+    font-size: 30px;
+    color: white;
+    font-family: 'Jura', sans-serif;
+}
+
+
+.insta-banner a{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+}
+
+
+/************************************/
+
+
+
+main .espassamento{
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    color: var(--textColor);
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+main .post-area{
+    /***ainda a ser preenchido ***/
+}
+
+main .post{
+    width: calc(100% / 5 - 18px);
+    height: 350px;
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: -4px;
+    margin-bottom: 50px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.post:hover{
+    background-color: rgba(0, 0, 0, 0.233);
+}
+.post:hover .icon-play{
+    width: 50px;
+    height: 50px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    border: 1px solid #ffc26763;
+}
+
+
+.icon-play{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    background-color: #202020;
+    background-image: url('../images/play-button.png');
+    background-size: 50%;
+    background-position: 60% 50%;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    border: none;
+    transition: all 200ms;
+}
+.icon-play:hover{
+    background-color: #3a3a3a;
+}
+
+.img-categoria{
+    width: 100%;
+    height: calc(100% - 30px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+}
+
+main .post:hover .categorias-area{
+    top: calc(100% - 60px);
+    height: 60px;
+    margin-bottom: -60px;
+}
+main .post:hover .categoria{
+    display: inline-block;
+    border: 1px solid rgba(255, 166, 0, 0.199);
+    background-color: #202020;
+    color: var(--mainColor);
+}
+
+.categorias-area{
+    position: relative;
+    top: 100%;
+    width: 100%;
+    height: 0px;
+    background-color: rgba(0, 0, 0, 0.548);
+    transition: all 200ms;
+}
+
+.categoria{
+    padding: 7px 10px;
+    margin: 4px 5px;
+    background-color: transparent;
+    display: inline-block;
+    border-radius: 10px;
+    color: transparent;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: all 400ms;
+}
+
+.post-title{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.post-title a{
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--textColor);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.post-title a:hover{
+    color: var(--mainColor);
+}
+
+
+
+
+/***Fim Corpo Principal***/
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    /***Cabeçalho***/
+    header .container-header{
+        width: 100%;
+        margin: 0 10px;
     }
+    /***Fim cabeçalho***/
+
+
+    /***Corpo Principal***/
+
+    main .post{
+        width: calc(100% / 4 - 19px);
+        height: 280px;
+    }
+    /***Fim Corpo Principal***/
+}
+
+@media screen and (max-width: 820px) {
+
+    main .post{
+        width: calc(100% / 4 - 18px);
+    }
+
 }
 
 
 @media screen and (max-width: 855px) {
-
+    /***Cabeçalho***/
     header .nav{
         display: block;
         position: absolute;
@@ -188,6 +463,12 @@ input[type="search"]{
 
     nav li{
         display: block;
+        border-bottom: 1px solid rgba(255, 216, 143, 0.212);
+        padding: 15px 15px;
+    }
+
+    nav a{
+        padding-right: 50%;
     }
 
     header .icon-menu{
@@ -195,6 +476,7 @@ input[type="search"]{
     }
 
     header .icon-buscar{
+        background-size: 50%;
         position: absolute;
     }
 
@@ -205,14 +487,98 @@ input[type="search"]{
     form:hover{
         background-color: rgba(255, 255, 255, 0.164);
     }
+    /***Fim cabeçalho***/
+
+    main .insta-banner{
+        width: calc(100% - 10px);
+        height: 80px;
+        margin-left: 5px;
+        margin-right: 5px;
+        
+    }
+
+    main .insta-banner .img{
+        width: 25px;
+        height: 25px;
+    }
+    main .insta-banner .insta{
+        font-size: 25px;
+    }
 
 }
 
 
+@media screen and (max-width: 820px) {
 
-@media screen and (max-width: 1024px) {
-    header .container-header{
-        width: 100%;
-        margin: 0 10px;
+    /***Corpo Principal***/
+
+    main .post{
+        width: calc(100% / 2 - 22px);
+        height: 350px;
     }
+
+    main .icon-play{
+        width: 50px;
+        height: 50px;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        border: 1px solid #ffc26763;
+    }
+
+    main .categoria{
+        display: inline-block;
+        border: 1px solid rgba(255, 166, 0, 0.199);
+        background-color: #202020;
+        color: var(--mainColor);
+    }
+
+    main .categorias-area{
+        top: calc(100% - 60px);
+        height: 60px;
+        margin-bottom: -60px;
+    }
+    /***Fim Corpo Principal**/
+
+}
+
+@media screen and (max-width: 550px) {
+    /***Cabeçalho***/
+    header .logo{
+        width: 125px;
+        height: 100%;
+    }
+    /***Fim cabeçalho***/
+}
+
+@media screen and (max-width: 500px) {
+    /***Corpo Principal***/
+
+    main .espassamento{
+        padding-left: 15px;
+    }
+
+    main .post{
+        width: calc(100% - 59px);
+        height: 400px;
+        margin-left: 30px;
+    }
+    /***Fim Corpo Principal***/
+}
+
+@media screen and (max-width: 400px){
+    nav a{
+        padding-right: 40%;
+    }
+}
+
+@media screen and (max-width: 350px){
+    nav a{
+        padding-right: 30%;
+    }
+
+    main .post{
+        height: 300px;
+    }
+
+
 }
