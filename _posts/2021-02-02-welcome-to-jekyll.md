@@ -5,5 +5,6 @@ date:   2021-02-02 19:46:42 -0300
 categories: jekyll update
 image: https://i.pinimg.com/originals/e9/fe/cc/e9fecc84fcf11ca160ebf4f80791d275.jpg
 tempo: 1h 50min
-tags: aventura teste
+tags: aventura
+categoria: ação
 ---
